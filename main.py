@@ -34,5 +34,16 @@ def find_unique_in_a_multiple_in_b(A, B):
         return sorted(list(result))
     else:
         return ("Таких элементов нет")
-
-print(find_unique_in_a_multiple_in_b(input_array(), input_array()))
+    
+def find_multiple_in_both(A,B):
+    from collections import Counter
+    a_count = Counter(A)
+    b_count = Counter(B)
+    result = set()
+    for i in a_count:
+        if a_count[i] > 1 and b_count.get(i, 0) > 1:
+            result.add(i)
+    if result != set(): 
+        return sorted(list(result))
+    else:
+        return ("Таких элементов нет")
