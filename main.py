@@ -9,4 +9,17 @@ def input_array():
             return array
         except ValueError:
             print("Ошибка: Введите только целые числа через пробел")
-            
+
+def find_repeating_in_b(A, B):
+    from collections import Counter
+    b_count = Counter(B)
+    result = set()
+    for i in A:
+        if b_count[i] > 1:
+            result.add(i)
+    if result != set(): 
+        return sorted(list(result))
+    else:
+        return ("Таких элементов нет")
+
+print(find_repeating_in_b(input_array(), input_array()))
