@@ -22,4 +22,17 @@ def find_repeating_in_b(A, B):
     else:
         return ("Таких элементов нет")
 
-print(find_repeating_in_b(input_array(), input_array()))
+def find_unique_in_a_multiple_in_b(A, B):
+    from collections import Counter
+    a_count = Counter(A)
+    b_count = Counter(B)
+    result = set()
+    for i in A:
+        if a_count[i] == 1 and b_count[i] > 1:
+            result.add(i)
+    if result != set(): 
+        return sorted(list(result))
+    else:
+        return ("Таких элементов нет")
+
+print(find_unique_in_a_multiple_in_b(input_array(), input_array()))
